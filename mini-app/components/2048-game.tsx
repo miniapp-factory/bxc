@@ -6,7 +6,6 @@ import { Share } from "@/components/share";
 import { url } from "@/lib/metadata";
 
 const GRID_SIZE = 4;
-const TILE_VALUES = [2, 4];
 const TILE_PROBABILITIES = [0.9, 0.1];
 
 function getRandomTile() {
@@ -24,6 +23,7 @@ export function Game2048() {
   const [gameWon, setGameWon] = useState(false);
 
   // Initialize board with two tiles
+   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const initBoard = cloneBoard(board);
     addRandomTile(initBoard);
